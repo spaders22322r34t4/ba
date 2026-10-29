@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Console Banned</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- BIZ UDPGothic is Morisawa's free cut of UD Shin Go, the typeface the Switch system UI is set in -->
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#000;
+    --text:#fff; --logo:#fff; --red:#ff4d5c; --icon:#ee3a47;
+    --btn-bg:#000; --btn-border:#e6e6e6;
+    --logo-h:clamp(30px, min(4.4vw, 7.4vh), 64px);
+    --logo-top:clamp(14px, 5vh, 48px);
+    --logo-left:clamp(16px, 5vw, 64px);
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body {
+    min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; color:var(--text);
+    padding:calc(var(--logo-top) + var(--logo-h)) 16px clamp(12px, 3.5vh, 36px);
+    background:var(--bg);
+    font-family:"BIZ UDPGothic", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-weight:700;
+    letter-spacing:-.02em; -webkit-text-stroke:.018em currentColor; -webkit-font-smoothing:antialiased;
+  }
+  .logo { position:absolute; top:var(--logo-top); left:var(--logo-left); height:var(--logo-h); width:auto; color:var(--logo);
+    letter-spacing:0; -webkit-text-stroke:0; }
+  .logo text { font-family:"BIZ UDPGothic", "Segoe UI", Arial, sans-serif; font-weight:700; fill:currentColor;
+    stroke:currentColor; stroke-linejoin:miter; stroke-miterlimit:2.5; }
+  .icon { width:clamp(76px, min(11.5vw, 20vh), 170px); margin-bottom:clamp(18px, min(3.2vw, 5.5vh), 44px);
+    filter:drop-shadow(0 0 6px rgba(238,58,71,.3)); }
+  h1 { color:var(--red); font-size:clamp(20px, min(2.75vw, 4.76vh), 40px); font-weight:700; margin-bottom:.8em; }
+  p { font-size:clamp(14px, min(1.75vw, 3.04vh), 26px); line-height:1.3; margin-bottom:1.85em; }
+  p + p { margin-bottom:1.95em; }
+  .code { font-size:clamp(16px, min(2.06vw, 3.65vh), 30px); color:#e8e8e8; }
+  .code span { color:var(--red); }
+  .reason { font-size:clamp(15px, min(1.93vw, 3.36vh), 28px); line-height:1.3; margin-top:.44em;
+    margin-bottom:clamp(18px, min(2.63vw, 4.68vh), 38px); }
+  /* BIZ UDPGothic's parentheses carry wide inner side-bearings; pull them in to sit tight like the Switch UI */
+  .paren-l { margin-right:-.13em; } .paren-r { margin-left:-.13em; }
+  button {
+    width:min(100%, clamp(240px, 45vw, 640px)); height:clamp(46px, min(7.3vw, 13vh), 100px);
+    font:inherit; font-size:clamp(18px, min(2.2vw, 3.9vh), 32px); font-weight:700; color:#fff;
+    background:var(--btn-bg); border:clamp(2px, .25vw, 3px) solid var(--btn-border);
+    border-radius:clamp(8px, 1vw, 14px); cursor:pointer;
+    box-shadow:0 0 0 1px rgba(255,255,255,.12);
+  }
+  button:hover { background:#161616; }
+  @media (max-width:640px) { p br { display:none; } }
+</style>
+</head>
+<body>
+  <svg class="logo" viewBox="0 -1.5 232 47" role="img" aria-label="Nintendo Switch 2">
+    <!-- Both Joy-Cons are mirror images: 22 wide, 44 tall, 11 corner radius, 4 gap between them -->
+    <!-- Left Joy-Con (x 0-22): outline with the stick near the top -->
+    <path d="M20 2 H11 A9 9 0 0 0 2 11 V33 A9 9 0 0 0 11 42 H20 Z" fill="none" stroke="currentColor" stroke-width="4"/>
+    <circle cx="11" cy="13" r="5.25" fill="currentColor"/>
+    <!-- Right Joy-Con (x 26-48): solid with the stick cut out near the bottom -->
+    <path fill="currentColor" fill-rule="evenodd"
+      d="M26 0 H37 A11 11 0 0 1 48 11 V33 A11 11 0 0 1 37 44 H26 Z M31.75 27 a5.25 5.25 0 1 0 10.5 0 a5.25 5.25 0 1 0 -10.5 0 Z"/>
+    <!-- BIZ UDPGothic caps are 0.81em tall and sit 0.025em below the baseline. The stroke thickens the Bold cut to the
+         wordmark's weight; positions allow for it so NINTENDO (y 0-15) and SWITCH (y 20-44) line up with the 2 (y 0-44),
+         and both words are widened to the same edges (x 58 to 191) like the wider wordmark lettering. -->
+    <text transform="matrix(1.12 0 0 1 56.92 0)" y="14.06" font-size="17.28" letter-spacing="2.1" stroke-width="1">NINTENDO</text>
+    <text transform="matrix(1.066 0 0 1 57.44 0)" y="42.7" font-size="28.15" stroke-width="1.2">SWITCH</text>
+    <text x="194.97" y="41.61" font-size="51.6" stroke-width="2.2">2</text>
+  </svg>
+
+  <svg class="icon" viewBox="0 0 100 100" aria-hidden="true">
+    <circle cx="50" cy="50" r="42" fill="none" stroke="var(--icon)" stroke-width="10"/>
+    <line x1="21.7" y1="21.7" x2="78.3" y2="78.3" stroke="var(--icon)" stroke-width="10"/>
+  </svg>
+  <h1>This console has been banned.</h1>
+  <p>Your Nintendo Switch 2 console has been permanently banned<br> from online services due to a violation of our terms of service.</p>
+  <p>For more information, please visit support.nintendo.com.</p>
+  <div class="code">Error Code: <span>2124-4007</span></div>
+  <div class="reason"><span class="paren-l">(</span>NS2JB Exploit Detected<span class="paren-r">)</span></div>
+  <button>OK</button>
+</body>
+</html>
